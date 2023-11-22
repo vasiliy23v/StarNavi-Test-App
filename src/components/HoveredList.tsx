@@ -19,7 +19,7 @@ const HoveredList: React.FC<HoveredListProps> = ({
   };
 
   return (
-    <div style={{ width: "40%", height: "80vh", overflowY: "scroll" }}>
+    <>
       <h4>Hovered Squares: </h4>
       {hoveredSquares.map((square, index) => {
         const { row, col } = indexToRowCol(square);
@@ -30,7 +30,7 @@ const HoveredList: React.FC<HoveredListProps> = ({
           </span>
         );
       })}
-    </div>
+    </>
   );
 };
 

@@ -39,7 +39,6 @@ const App: React.FC = () => {
   const deviceWidth = window.innerWidth;
   const gridSize = Math.min(deviceWidth - 10, 600);
   const squareSize = gridSize / (selectedMode?.field || 1) - 4;
-
   return (
     <div style={wrapperStyles}>
       <div style={leftColumnStyles}>
@@ -70,12 +69,20 @@ const App: React.FC = () => {
           />
         )}
       </div>
-      {hoveredSquares.length !== 0 && (
-        <HoveredList
-          hoveredSquares={hoveredSquares}
-          selectedMode={selectedMode}
-        />
-      )}
+      <div
+        style={{
+          width: "40%",
+          height: "90vh",
+          overflowY: `${hoveredSquares.length !== 0 ? "scroll" : "hidden"}`,
+        }}
+      >
+        {hoveredSquares.length !== 0 && (
+          <HoveredList
+            hoveredSquares={hoveredSquares}
+            selectedMode={selectedMode}
+          />
+        )}
+      </div>
     </div>
   );
 };
