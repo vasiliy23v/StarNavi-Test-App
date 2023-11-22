@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
-import axios from "axios";
+import React, { useState, useCallback } from "react";
 import Button from "./components/Button";
 import { Grid } from "./components/Grid";
 import { Mode } from "./types/modesTypes";
@@ -12,7 +11,7 @@ const App: React.FC = () => {
   const [selectedMode, setSelectedMode] = useState<Mode | null>(null);
   const [hoveredSquares, setHoveredSquares] = useState<number[]>([]);
   const [isHovering, setIsHovering] = useState<boolean>(false);
-  const { modes, loading, error } = useModes();
+  const { modes } = useModes();
 
   const handleSquareHover = useCallback(
     (squareIndex: number) => {
